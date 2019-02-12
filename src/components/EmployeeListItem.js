@@ -5,16 +5,16 @@ import { CardSection } from './common';
 
 class EmployeeListItem extends Component {
   onRowPress() {
-    Actions.employeeCreate();
+    Actions.employeeEdit({ employee: this.props.employee });
   }
 
   render() {
     const { name } = this.props.employee;
 
     return (
-      <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)>
+      <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
         <View>
-        <CardSection>
+          <CardSection>
             <Text style={styles.titleStyle}>
               {name}
             </Text>
